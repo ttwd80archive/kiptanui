@@ -2,6 +2,7 @@
     <wb-module deploy-name="kiptanui">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <property name="context-root" value="kiptanui"/>
         <property name="java-output-path" value="/kiptanui/build/classes"/>
     </wb-module>
