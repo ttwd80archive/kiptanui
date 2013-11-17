@@ -30,6 +30,17 @@
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="messages" />
+		<property name="commonMessages">
+			<bean
+				class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+				<property name="locations">
+					<list>
+						<value>classpath:url.properties</value>
+						<value>classpath:app.properties</value>
+					</list>
+				</property>
+			</bean>
+		</property>
 	</bean>
 
 	<bean id="templateResolver"
