@@ -24,7 +24,7 @@ public class MainController extends AbstractController {
 	public MainController(SecurityContextService securitycontextService, Map<String, String> map) {
 		super();
 		this.securitycontextService = securitycontextService;
-		this.map = Collections.unmodifiableMap(Collections.synchronizedMap(map)) ;
+		this.map = Collections.unmodifiableMap(Collections.synchronizedMap(map));
 	}
 
 	@Override
@@ -41,9 +41,7 @@ public class MainController extends AbstractController {
 					return new ModelAndView(map.get(key));
 				}
 			}
-
 		}
 		return null;
 	}
-
 }
