@@ -56,11 +56,12 @@ CREATE TABLE `user_role` (
   `user_id` varchar(150) NOT NULL DEFAULT '0',
   `role_name` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id_role_name` (`user_id`,`role_name`),
   KEY `FK_user_role_user` (`user_id`),
   KEY `FK_user_role_role` (`role_name`),
   CONSTRAINT `FK_user_role_role` FOREIGN KEY (`role_name`) REFERENCES `role` (`role_name`),
   CONSTRAINT `FK_user_role_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

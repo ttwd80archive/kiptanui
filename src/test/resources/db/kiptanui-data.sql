@@ -20,6 +20,7 @@
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` (`role_name`, `label`) VALUES ('ROLE_ADMIN','Administrator');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -29,6 +30,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`id`, `password`, `name`) VALUES ('admin','$2a$10$giVIMkXQ3KikUtGBYFCVsuoyfVhNMaqKKV4CF/rt4gHKhASz17iDi','Administrator');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -38,6 +40,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `user_role` WRITE;
 /*!40000 ALTER TABLE `user_role` DISABLE KEYS */;
+INSERT INTO `user_role` (`id`, `user_id`, `role_name`) VALUES (1,'admin','ROLE_ADMIN');
 /*!40000 ALTER TABLE `user_role` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
