@@ -80,7 +80,8 @@
 
 	<mvc:default-servlet-handler />
 
-	<mvc:resources location="/resources/" mapping="/resources/**" />
+	<mvc:resources location="/resources/" mapping="/resources/**"
+		cache-period="31557600" />
 
 	<mvc:view-controller path="/index" view-name="index" />
 	<mvc:view-controller path="/admin/**" />
