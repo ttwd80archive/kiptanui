@@ -8,6 +8,7 @@
 
 	<security:http pattern="/resources/**" security="none" />
 	<security:http pattern="/index" security="none" />
+	<security:http pattern="/" security="none" />
 	<security:http pattern="/public/**" security="none" />
 
 	<security:http auto-config="true">
@@ -22,7 +23,7 @@
 			always-use-default-target="true" />
 		<security:logout logout-url="/logout"
 			logout-success-url="/index" invalidate-session="true" />
-		<security:remember-me key="judrechut3ec8awr"
+		<security:remember-me key="8a34tiwtaf6aipun"
 			token-validity-seconds="604800" />
 	</security:http>
 

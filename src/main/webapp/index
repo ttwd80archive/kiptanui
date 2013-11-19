@@ -1,6 +1,0 @@
-used to fool tomcat to use "/index"
-refer to:
-http://stackoverflow.com/questions/10237416/welcome-file-in-web-xml-with-spring-not-working
-
-we use to do this with jstl redirect.
-I am dumping JSTL.
