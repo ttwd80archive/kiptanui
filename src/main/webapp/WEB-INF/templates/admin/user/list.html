@@ -81,23 +81,23 @@
 	<!-- sidebar -->
 	<div id="sidebar-nav">
 		<ul id="dashboard-menu">
+			<li><a href="index.html" th:href="@{/admin/index}"> <i
+					class="fa fa-home"></i> <span>Home</span>
+			</a></li>
 			<li class="active">
 				<div class="pointer">
 					<div class="arrow"></div>
 					<div class="arrow_border"></div>
-				</div> <a href="index.html" th:href="@{/admin/index}"> <i
-					class="fa fa-home"></i> <span>Home</span>
+				</div> <a class="dropdown-toggle" href="#"> <i class="fa fa-group"></i>
+					<span>Users</span>
 			</a>
-			</li>
-			<li><a class="dropdown-toggle" href="#"> <i
-					class="fa fa-group"></i> <span>Users</span>
-			</a>
-				<ul class="submenu">
-					<li><a href="user-list.html" th:href="@{/admin/user/list}">User
-							list</a></li>
+				<ul class="submenu active">
+					<li><a class="active" href="user-list.html"
+						th:href="@{/admin/user/list}">User list</a></li>
 					<li><a href="new-user.html">New user form</a></li>
 					<li><a href="user-profile.html">User profile</a></li>
-				</ul></li>
+				</ul>
+			</li>
 		</ul>
 	</div>
 	<!-- end sidebar -->
@@ -108,7 +108,31 @@
 		<div id="pad-wrapper">
 			<div class="row">
 				<div class="col-md-12">
-					<div>Welcome message</div>
+					<div>user list</div>
+					<div class="row">
+						<div class="col-md-12">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>Name</th>
+										<th>Edit Profile</th>
+										<th>Edit Role</th>
+										<th>Change Password</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="row,rowStat : ${userList}">
+										<td th:text="${rowStat.count}">1</td>
+										<td th:text="${row.name}">Thymus Thymi</td>
+										<td><a href="#">Edit Profile</a></td>
+										<td><a href="#">Edit Role</a></td>
+										<td><a href="#">Change Password</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
 

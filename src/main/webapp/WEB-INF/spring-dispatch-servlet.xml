@@ -63,7 +63,6 @@
 
 	<bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
-		<property name="order" value="0" />
 	</bean>
 
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
