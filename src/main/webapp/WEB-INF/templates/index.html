@@ -85,6 +85,7 @@
 					<div class="col-md-12 footer">
 
 						<input type="text" placeholder="username" class="form-control"
+							th:value="${session.SPRING_SECURITY_LAST_EXCEPTION == null ? '' : session.SPRING_SECURITY_LAST_EXCEPTION.authentication.principal}"
 							name="j_username" /> <input type="password"
 							placeholder="Password" class="form-control" name="j_password" />
 						<input type="submit" value="sign in" />
