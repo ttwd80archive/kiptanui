@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Template</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- bootstrap -->
+<link rel="stylesheet" type="text/css"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css"
+	th:href="#{url.bootstrap.css}" />
+<link
+	th:href="@{/resources/admin/theme/css/bootstrap/bootstrap-overrides.css}"
+	type="text/css" rel="stylesheet" />
+
+<!-- libraries -->
+<link th:href="#{url.jqueryui.css}"
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.css"
+	rel="stylesheet" type="text/css" />
+<link th:href="#{url.fontawesome.css}"
+	href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.min.css"
+	rel="stylesheet" />
+
+<!-- global styles -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/resources/admin/theme/css/compiled/layout.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/resources/admin/theme/css/compiled/elements.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/resources/admin/theme/css/compiled/icons.css}" />
+
+<!-- this page specific styles -->
+<link rel="stylesheet"
+	th:href="@{/resources/admin/theme/css/compiled/index.css}"
+	type="text/css" media="screen" />
+
+<!-- open sans font -->
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+	rel='stylesheet' type='text/css' />
+
+<!-- lato font -->
+<link
+	href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic'
+	rel='stylesheet' type='text/css' />
+
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+	<!-- navbar -->
+	<header class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"><img
+				th:src="@{/resources/admin/theme/img/logo.png}" /></a>
+		</div>
+		<ul class="nav navbar-nav pull-right hidden-xs">
+			<li class="dropdown"><a href="#"
+				class="dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown">
+					Your account <b class="caret"></b>
+			</a>
+				<ul class="dropdown-menu">
+					<li><a href="personal-info.html">Personal info</a></li>
+					<li><a href="#">Account settings</a></li>
+					<li><a href="#">Billing</a></li>
+					<li><a href="#">Export your data</a></li>
+					<li><a href="#">Send feedback</a></li>
+				</ul></li>
+			<li class="settings hidden-xs hidden-sm"><a
+				href="personal-info.html"> <i class="fa fa-cog"></i>
+			</a></li>
+			<li class="settings hidden-xs hidden-sm"><a th:href="@{/logout}">
+					<i class="fa fa-sign-out"></i>
+			</a></li>
+		</ul>
+	</header>
+	<!-- end navbar -->
+
+	<!-- sidebar -->
+	<div id="sidebar-nav">
+		<ul id="dashboard-menu">
+			<li><a href="index.html" th:href="@{/admin/index}"> <i
+					class="fa fa-home"></i> <span>Home</span>
+			</a></li>
+			<li><a class="dropdown-toggle" href="#"> <i
+					class="fa fa-group"></i> <span>Users</span>
+			</a>
+				<ul class="submenu">
+					<li><a href="user-list.html" th:href="@{/admin/user/list}">User
+							list</a></li>
+					<li><a href="new-user.html">New user form</a></li>
+					<li><a href="user-profile.html">User profile</a></li>
+				</ul></li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+
+
+	<!-- main container -->
+	<div class="content">
+		<div id="pad-wrapper">
+			<section layout:fragment="content">
+				<p>Page content goes here</p>
+			</section>
+		</div>
+	</div>
+
+	<div style="display: none;">
+		<div id="section-pointer" class="pointer">
+			<div class="arrow"></div>
+			<div class="arrow_border"></div>
+		</div>
+	</div>
+
+	<!-- scripts -->
+	<script th:src="#{url.jquery.js}"
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script th:src="#{url.bootstrap.js}"
+		src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+	<script th:src="#{url.jqueryui.js}"
+		src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script th:src="@{/resources/admin/theme/js/theme.js}"></script>
+	<script
+		th:src="@{/resources/admin/js/template.js} + '?version=' +  #{app.version}"></script>
+</body>
+</html>
