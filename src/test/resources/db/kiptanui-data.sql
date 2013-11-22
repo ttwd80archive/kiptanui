@@ -20,6 +20,9 @@
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` (`role_name`, `label`) VALUES ('ROLE_1','Sample Role 1');
+INSERT INTO `role` (`role_name`, `label`) VALUES ('ROLE_2','Sample Role 2');
+INSERT INTO `role` (`role_name`, `label`) VALUES ('ROLE_3','Sample Role 3');
 INSERT INTO `role` (`role_name`, `label`) VALUES ('ROLE_ADMIN','Administrator');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
