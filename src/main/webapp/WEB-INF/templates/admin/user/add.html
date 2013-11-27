@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	layout:decorator="admin/template"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Add New User</title>
+<meta id="menu-active" name="menu-active"
+	content="#dashboard-menu > li:eq(1), #dashboard-menu > li:eq(1) > ul:eq(0), #dashboard-menu > li:eq(1) > ul:eq(0) > li:eq(1) > a" />
+<meta id="menu-arrow" name="menu-arrow"
+	content="#dashboard-menu > li:eq(1)" />
+</head>
+<body>
+
+	<!-- main container -->
+	<div layout:fragment="content" class="row">
+		<div class="row header">
+			<div class="col-md-12">
+				<h3>Add New User</h3>
+			</div>
+		</div>
+		<div class="row form-wrapper">
+			<div class="col-md-12">
+				<div class="container">
+					<form class="new_user_form" id="form"
+						th:action="@{/admin/user/insert}">
+						<div class="col-md-8 field-box">
+							<label>*Username:</label> <input class="form-control" type="text"
+								id="username" name="username" />
+						</div>
+						<div class="col-md-8 field-box">
+							<label>*Full Name:</label> <input class="col-md-9 form-control"
+								type="text" id="fullName" name="fullName" />
+						</div>
+						<div class="col-md-8 field-box">
+							<label>*Password:</label> <input class="col-md-9 form-control"
+								type="password" id="password" name="password" />
+						</div>
+						<div class="col-md-8 field-box">
+							<label>*Password Confirmation:</label> <input
+								class="col-md-9 form-control" type="password"
+								id="passwordConfirmation" name="passwordConfirmation" />
+						</div>
+						<div class="col-md-8 field-box actions">
+							<input type="button" class="btn-glow primary" value="Create user" />
+							<span>OR</span> <input type="reset" value="Cancel" class="reset" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- scripts -->
+	<div layout:fragment="custom-js">
+		<script th:src="#{url.jqueryform.js}"
+			src="//cdn.jsdelivr.net/jquery.form/3.45/jquery.form.min.js"></script>
+		<script
+			th:src="@{/resources/admin/js/user/add.js} + '?version=' +  #{app.version}"></script>
+
+	</div>
+</body>
+</html>

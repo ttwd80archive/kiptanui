@@ -91,7 +91,8 @@
 				<ul class="submenu">
 					<li><a href="user-list.html" th:href="@{/admin/user/list}">User
 							list</a></li>
-					<li><a href="new-user.html">New user form</a></li>
+					<li><a href="new-user.html" th:href="@{/admin/user/add}">Add
+							New User</a></li>
 					<li><a href="user-profile.html">User profile</a></li>
 				</ul></li>
 		</ul>
@@ -125,5 +126,6 @@
 	<script th:src="@{/resources/admin/theme/js/theme.js}"></script>
 	<script
 		th:src="@{/resources/admin/js/template.js} + '?version=' +  #{app.version}"></script>
+	<div layout:fragment="custom-js">Custom js here</div>
 </body>
 </html>
